@@ -155,29 +155,6 @@ hbs.registerHelper('oddOrEven', function (options) {
   return oddOrEven;
 });
 
-hbs.registerPartial("VhFooter", "<div class='menuitem'><a href=\"https://www.varshahostel.com\">Home</a></div> <div class='menuitem'><a href=\"https://www.varshahostel.com\aboutus\">About us</a></div>");
-//<div class='menuitem'><a href="javascript:window.demo.getRooms()">Rooms</a></div>
-//<div class='menuitem'><a href="javascript:window.demo.getBillTags()">Bill Tags</a></div>
-//<div class='menuitem'><a href="javascript:window.demo.collectPayment()">Pay Bill</a></div>");
-//hbs.registerPartial("transactionstatus",
-var fs = require('fs');
-
-var partialsDir = __dirname + '/views/partials';
-
-var filenames = fs.readdirSync(partialsDir);
-
-filenames.forEach(function (filename) {
-  var matches = /^([^.]+).hbs$/.exec(filename);
-  if (!matches) {
-    return;
-  }
-  var name = matches[1];
-  var template = fs.readFileSync(partialsDir + '/' + filename, 'utf8');
-  hbs.registerPartial(name, template);
-});
-//hbs.registerPartials(__dirname + './views/partials');
-
-
 app.engine('hbs', engines.handlebars);
 app.set('views', './views');
 app.set('view engine', 'hbs');
@@ -296,14 +273,6 @@ app.use(cors);
 app.use(cookieParser);
 app.use(validateFirebaseIdToken);
 
-
-
-
-const userbill = require('./userbill');
-
-
-
-
 app.get('/:siteName/menu', (req, res) => {
 
   SITE = req.params.siteName;
@@ -317,16 +286,7 @@ app.get('/:siteName/menu', (req, res) => {
     res.render('customermenu', { SITE });
 });
 
-const rooms = require('./rooms');
+exports.app = functions.https.onRequest(app);
+const usermgmt = require('./usermgmt');
 
-
-
-
-
-
-
-
-
-const bkutils = require('./bkutils');
-const { response } = require('express');
 
