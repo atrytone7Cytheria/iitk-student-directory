@@ -1,0 +1,39 @@
+
+body {
+  margin: 0;
+}
+
+#container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+#user-info {
+  border: none;
+  clear: both;
+  margin: 0 auto 20px;
+  max-width: 400px;
+  padding: 10px;
+  text-align: center;
+}
+
+tr {
+  border-bottom: 30px;
+  border-top: 30px;
+}
+
+th, td {
+  width:150px;
+  text-align:center;
+  border:0px solid black;
+  padding:25px
+}

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <style>
+        table, th, td {
+        border: 1px solid pink;
+        border-collapse: collapse;
+        }
+        th, td {
+        padding: 3px;
+        }
+        table tr:nth-child(even) {
+        background-color: #eee;
+        }
+        table tr:nth-child(odd) {
+        background-color: #fff;
+        }
+        table th {
+        color: white;
+        background-color: black;
+        }
+
+
+    </style>
+    <body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
+        <table border="1" style="width:100%">
+            <THEAD>
+                <tr>
+                    <th>Bill Tag</th>
+                    <th>Rent Status</th>
+                    <th>Gen Rent</th>
+                    <th>Del Rent</th>
+                    <th>eb Status</th>
+                    <th>Gen EB</th>
+                    <th>Del EB</th>
+                    <th>eb info</th>
+                    <th>Last reading</th>
+                    <th>Curr Reading</th>
+<!--                    <th>Advance Amount</th>
+                    <th>Collected Advance</th>
+-->
+                    <th>eb Cumulative</th>
+                    <th>advance Cumulative</th>
+                    <th>rent Cumulative</th>
+                    <th>total Receivable</th>
+                    <th>total collected</th>
+                    <th>total writeOff</th>
+                </tr>
+            </THEAD>
+            {{#each billTags}}
+                <tr>
+                    <td>
+                        <span style="font-weight:bold">
+                            {{#isEbRecorded this.billStatus }}
+                                <a href="javascript:window.demo.generateMonthlySheet('{{this.billTag}}')">{{this.billTag}}</a>
+                            {{else}}
+                                <a href="javascript:window.demo.getMonthlySheet('{{this.billTag}}')">{{this.billTag}}</a>
+                            {{/isEbRecorded}}
+                        </span>
+                    </td>
+                    <td align="center">
+                        <span style="font-weight:bold">
+                            <!--{{this.billStatus}}-->
+                            {{this.rentBillStatus}}
+                        </span>
+                    </td>
+                    <td align="center">
+                        <span style="font-weight:bold">
+                            <a href="javascript:window.demo.generateRentBills('{{this.billTag}}')">GenerateRentBills</a>
+                        </span>                    
+                    </td>
+                    <td align="center">
+                        <span style="font-weight:bold">
+                            <a href="javascript:window.demo.deleteRentBills('{{this.billTag}}')">DeleteRentBills</a>
+                        </span>                    
+                    </td>
+
+                    <td align="center">
+                        <span style="font-weight:bold">
+                             {{this.EBBillStatus}}
+                        </span>
+                    </td>
+
+                    <td align="center">
+                        <span style="font-weight:bold">
+                            <a href="javascript:window.demo.generateEBInfo('{{this.billTag}}')">GenerateEB</a>
+                        </span>                    
+                    </td>
+                    <td align="center">
+                        <span style="font-weight:bold">
+                            <a href="javascript:window.demo.deleteEBBills('{{this.billTag}}')">DeleteEBBills</a>
+                        </span>                    
+                    </td>
+                    <td align="center">
+                        <span style="font-weight:bold">
+                            <a href="./myhome?load=billtags&sheettype=ebinfo&billtag={{this.billTag}}">EB Info</a>
+                        </span>                    
+                    </td>
+                    <td>
+                        <span style="font-weight:bold">
+                            {{this.lastReadingDate}}
+                        </span>
+                    </td>
+                    <td align="right">
+                        <span style="font-weight:bold">
+                            {{this.readingDate}}
+                        </span>
+                    </td>
+                   <!--  <td align="right">
+                        <span style="font-weight:bold">
+                            {{this.advanceAmount}}
+                        </span>
+                    </td>
+                    <td align="right">
+                        <span style="font-weight:bold">
+                            {{this.collectedAdvanceAmount}}
+                        </span>
+                    </td> -->
+                    <td align="right">
+                        <span style="font-weight:bold">
+                            {{this.ebCumulativeAmount}}
+                        </span>
+                    </td>
+
+                    <td>
+                        <span style="font-weight:bold">{{this.advanceAmount}}</span>
+                    </td>
+                    <td>
+                        <span style="font-weight:bold">{{this.rentCumulativeAmount}}</span>
+                    </td>
+                    <td>
+                        <span style="font-weight:bold">{{this.totalReceivable}}</span>
+                    </td>
+                    <td>
+                        <span style="font-weight:bold">{{this.totalCollectedAmount}}</span>
+                    </td>
+                    <td>
+                        <span style="font-weight:bold">{{this.totalWriteOffAmount}}</span>
+                    </td>
+                </tr>
+            {{/each}}
+        </table>
+    </body>
+</html>

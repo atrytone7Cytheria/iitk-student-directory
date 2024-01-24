@@ -1,0 +1,15 @@
+10:48:51.570 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+10:48:51.755 [main] INFO com.firebase.server.forge.App$ - Listening at 135.250.127.49:9000
+10:48:52.310 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - varsha-iitk-eee-export successfully activated FBKV (SurveyIdle(0)) wait: 147ms, init: 0ms
+10:49:00.112 [FirebaseWorkerPool-1-3] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace bakavani-cc6ce, but the emulator is configured for varsha-iitk-eee-export. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+10:49:00.119 [NamespaceSystem-akka.actor.default-dispatcher-8] INFO com.firebase.core.namespace.NamespaceActor - bakavani-cc6ce successfully activated FBKV (SurveyIdle(0)) wait: 3ms, init: 0ms
+10:49:10.164 [NamespaceSystem-blocking-namespace-operation-dispatcher-19] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-cc6ce status Active to Active
+10:49:10.173 [NamespaceSystem-blocking-namespace-operation-dispatcher-19] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-cc6ce status Active to Active
+10:49:10.183 [NamespaceSystem-blocking-namespace-operation-dispatcher-19] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-cc6ce status Active to Active
+10:49:10.195 [NamespaceSystem-blocking-namespace-operation-dispatcher-19] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-cc6ce status Active to Active
+10:49:10.205 [NamespaceSystem-blocking-namespace-operation-dispatcher-19] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-cc6ce status Active to Active
+10:49:10.218 [NamespaceSystem-blocking-namespace-operation-dispatcher-19] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-cc6ce status Active to Active
+10:49:10.226 [NamespaceSystem-blocking-namespace-operation-dispatcher-19] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-cc6ce status Active to Active

@@ -1,0 +1,45 @@
+07:14:09.737 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+07:14:09.925 [main] INFO com.firebase.server.forge.App$ - Listening at 135.250.127.49:9000
+07:14:10.523 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - bakavani-9d43c successfully activated FBKV (SurveyIdle(0)) wait: 148ms, init: 0ms
+07:14:25.173 [NamespaceSystem-blocking-namespace-operation-dispatcher-9] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-9d43c status Active to Active
+07:14:25.200 [NamespaceSystem-blocking-namespace-operation-dispatcher-9] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-9d43c status Active to Active
+07:14:25.219 [NamespaceSystem-blocking-namespace-operation-dispatcher-9] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-9d43c status Active to Active
+07:14:25.230 [NamespaceSystem-blocking-namespace-operation-dispatcher-9] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-9d43c status Active to Active
+07:14:25.246 [NamespaceSystem-blocking-namespace-operation-dispatcher-9] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-9d43c status Active to Active
+07:14:25.260 [NamespaceSystem-blocking-namespace-operation-dispatcher-9] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-9d43c status Active to Active
+07:14:25.278 [NamespaceSystem-blocking-namespace-operation-dispatcher-9] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-9d43c status Active to Active
+07:14:25.287 [NamespaceSystem-blocking-namespace-operation-dispatcher-9] INFO com.firebase.core.namespace.StateManager - Namespace bakavani-9d43c status Active to Active
+08:43:47.573 [FirebaseWorkerPool-1-2] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace fake-server, but the emulator is configured for bakavani-9d43c. To 
+opt-out of single project mode add/set the single_project_mode: false property in 
+the firebase.json emulators config. 
+08:43:47.581 [NamespaceSystem-akka.actor.default-dispatcher-1195] INFO com.firebase.core.namespace.NamespaceActor - fake-server successfully activated FBKV (SurveyIdle(0)) wait: 3ms, init: 0ms
+08:44:19.174 [FirebaseWorkerPool-1-3] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace 135, but the emulator is configured for fake-server,bakavani-9d43c. To 
+opt-out of single project mode add/set the single_project_mode: false property in 
+the firebase.json emulators config. 
+08:44:19.180 [NamespaceSystem-akka.actor.default-dispatcher-1192] INFO com.firebase.core.namespace.NamespaceActor - 135 successfully activated FBKV (SurveyIdle(0)) wait: 2ms, init: 0ms
+09:39:13.300 [FirebaseWorkerPool-1-3] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace 10, but the emulator is configured for fake-server,135,bakavani-9d43c. To 
+opt-out of single project mode add/set the single_project_mode: false property in 
+the firebase.json emulators config. 
+09:39:13.307 [NamespaceSystem-akka.actor.default-dispatcher-1215] INFO com.firebase.core.namespace.NamespaceActor - 10 successfully activated FBKV (SurveyIdle(0)) wait: 3ms, init: 0ms
+09:45:53.955 [FirebaseWorkerPool-1-3] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace qualys, but the emulator is configured for fake-server,10,135,bakavani-9d43c. To 
+opt-out of single project mode add/set the single_project_mode: false property in 
+the firebase.json emulators config. 
+09:45:53.961 [NamespaceSystem-akka.actor.default-dispatcher-1216] INFO com.firebase.core.namespace.NamespaceActor - qualys successfully activated FBKV (SurveyIdle(0)) wait: 2ms, init: 0ms
+09:51:44.685 [FirebaseWorkerPool-1-4] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace localhost, but the emulator is configured for fake-server,qualys,10,135,bakavani-9d43c. To 
+opt-out of single project mode add/set the single_project_mode: false property in 
+the firebase.json emulators config. 
+09:51:44.692 [NamespaceSystem-akka.actor.default-dispatcher-1216] INFO com.firebase.core.namespace.NamespaceActor - localhost successfully activated FBKV (SurveyIdle(0)) wait: 3ms, init: 0ms
+10:26:23.677 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+10:26:23.687 [NamespaceSystem-akka.actor.default-dispatcher-14390] INFO com.firebase.core.namespace.Terminator$Terminator - 6 actors left to terminate: fake-server, localhost, 135, bakavani-9d43c, 10, qualys
+10:26:23.697 [NamespaceSystem-akka.actor.default-dispatcher-14395] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for 135
+10:26:23.697 [NamespaceSystem-akka.actor.default-dispatcher-14397] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for localhost
+10:26:23.697 [NamespaceSystem-akka.actor.default-dispatcher-14393] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for 10
+10:26:23.697 [NamespaceSystem-akka.actor.default-dispatcher-14390] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for fake-server
+10:26:23.697 [NamespaceSystem-akka.actor.default-dispatcher-14396] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for qualys
+10:26:23.697 [NamespaceSystem-akka.actor.default-dispatcher-14398] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for bakavani-9d43c
+10:26:23.703 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.

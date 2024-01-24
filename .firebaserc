@@ -1,0 +1,13 @@
+{
+  "projects": {},
+  "targets": {
+    "bakavani-cc6ce": {
+      "hosting": {
+        "english": [
+          "varsha-iitk-eee"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

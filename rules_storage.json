@@ -1,0 +1,13 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if request.auth!=null && request.auth.uid == 'OcKrYAhROgU7vcWsgbqsgna0uiN2';
+    }
+  }
+  match /b/{bucket}/o {
+    match /Deploy_14Feb21/Customers/{customerId}/{allImages=**} {
+      allow read, write: if request.auth!=null && request.auth.uid == customerId;
+    }
+  }
+}

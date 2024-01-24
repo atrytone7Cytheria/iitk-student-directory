@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <style>
+        table {
+            display: table;
+        }
+        table tr {
+        }
+        table tr td {
+        }
+
+        table, th, td {
+        border: 1px solid pink;
+        border-collapse: collapse;
+        }
+        th, td {
+        padding: 3px;
+        }
+        table tr:nth-child(even) {
+        background-color: #eee;
+        }
+        table tr:nth-child(odd) {
+        background-color: #fff;
+        }
+        table th {
+        color: white;
+        background-color: black;
+        }
+
+        .paylink {
+            text-align: right;
+        }
+
+
+    </style>
+    <body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
+        <div class="" id="collectionmenu">
+            <div class='menuitem'><a href="./myhome?load=collectionreport">Today</a></div>
+            <div class='menuitem'><a href="./myhome?load=collectionreport&reporttype=month">This month till now</a></div>
+            <div class='menuitem'><a href="./myhome?load=collectionreport&reporttype=prevmonth">Last Month</a></div>
+            <div class='menuitem'><a href="javascript:window.demo.getDateRangeCollection()">Date range</a></div>
+        </div>
+        <!--{{stringyfy collectionReport}}-->
+
+        <table border="1" style="width:100%">
+                <tr>
+                    <td>Date/Time</td>
+                    <td>Name:</td>
+                    <td>ACC / Tramsaction</td>
+                    <td>BillTag / Note</td>
+                    <td>Transaction Amount</td>
+                    <!--<td>Collected Amount</td>-->
+                </tr>
+{{#if (isEqualTo reportType "month") }}
+                {{#each collectionReport as |collectionDayReport|}}
+                {{#each collectionDayReport as |transaction timstamp|}}
+                <!--{{stringyfy this}}-->
+                <tr>
+                    <td>{{dateStringIST timstamp}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.accId}} &nbsp;/&nbsp;{{this.transactionId}}</td>
+                    <td>{{billTag}} &nbsp;/&nbsp;{{this.note}}</td>
+                    <td>{{this.transactionAmount}}</td>
+                    <!--<td>{{this.collectedAmt}}</td>-->
+                </tr>
+                {{/each}}
+                {{/each}}
+{{else}}
+                {{#each collectionReport as |transaction timstamp|}}
+                <!--{{stringyfy this}}-->
+                <tr>
+                    <td>{{dateStringIST timstamp}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.accId}} &nbsp;/&nbsp;{{this.transactionId}}</td>
+                    <td>
+{{#if (isdefined this.billTag) }}   
+{{this.billTag}} &nbsp;
+{{/if}}
+{{#if (isdefined this.note) }}   
+/&nbsp;{{this.note}}</td>
+{{/if}}
+                    <td>{{this.transactionAmount}}</td>
+                    <!--<td>{{this.collectedAmt}}</td>-->
+                </tr>
+                {{/each}}
+{{/if}}                
+
+
+        </table>
+        
+    </body>
+</html>

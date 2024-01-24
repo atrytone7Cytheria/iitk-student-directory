@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transaction list</title>
+    </head>
+    <body>
+        <h1> Transaction List
+
+        </h1>
+        <ul>
+           <h2> accountid: {{billData.accountUID}}</h2>
+           <h2> billTag:{{billData.billTag}}</h2>
+           <h2> description:{{billData.description}}</h2>
+            {{#each transactions}}
+            <li>DOJ: {{doj}}, Room: {{roomNo}}, Name: {{inmateName}}, Balance: {{previousBalance}}, Rent: {{rent}}, EB: {{ebAmount}} </li>
+            {{/each}}
+        </ul>
+        {{> VhFooter}}
+    </body>
+    </html>

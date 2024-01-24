@@ -1,0 +1,5 @@
+Globals:
+   inmate_min_pending_amt_for_red --> minimum pending bill value to mark a user as red. Currently we dont aggregate the bill values to arrive at the total pending value. If any of the user bill is greater than this value we makr it user as red.
+   inmate_maintenance_amt 
+
+

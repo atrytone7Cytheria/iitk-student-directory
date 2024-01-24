@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<style>
+    table {
+        display: table;
+    }
+
+    table tr {}
+
+    table tr td {}
+
+    table,
+    th,
+    td {
+        border: 1px solid pink;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 3px;
+    }
+
+    .odd {
+        background-color: #eee;
+    }
+
+    .even {
+        background-color: #fff;
+    }
+
+    table th {
+        color: white;
+        background-color: black;
+    }
+
+    .paylink {
+        text-align: right;
+    }
+
+    .detail_collected {
+        display:none;
+        background-color: rgb(142, 228, 142);
+    }
+    .detail_pending {
+        display:none;
+        background-color: rgb(227, 228, 198);
+    }
+    .detail_new_trans {
+        display: none;
+        background-color: rgb(227, 228, 198);
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+</style>
+
+<body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
+    {{#isTrue printOption }}
+    {{else}}
+    {{/isTrue}}
+<!-- {{stringyfy halls}} -->
+
+    <table border="1" style="width:100%">
+        <col width=100><col width=100><col width=100>  <col width=100><col width=100><col width=100>  <col width=100><col width=100><col width=100>  <col width=100><col width=100>
+        <tbody>
+        <tr>
+            <th>#</th>
+            <th>Hall</th>
+            <th>Wing</th>
+            <th>Room</th>
+            <th>Roll#</th>
+            <th>Name</th>
+            <th>Phone#</th>
+            <th>Department</th>
+            {{#isTrue printOption }}
+            {{else}}
+            {{/isTrue}}
+        </tr>
+
+
+        {{#each halls as |hall hallId|}}
+        {{#each hall as |wing wingId|}}
+        {{#each wing as |room roomId|}}
+        {{#each room as |studentRef userId|}}
+        <!--{{stringyfy this}}-->
+        <tr>
+            <td>{{serialNo}}</td>
+            <td>
+                {{hallId}}
+            </td>
+            <td>
+                {{wingId}}
+            </td>
+            <td>
+                {{roomId}}
+            </td>
+            <td>
+                {{userId}}
+            </td>
+            <td>
+                {{studentRef.name}}
+            </td>
+            <td>
+                {{studentRef.phone}}
+            </td>
+            <td>
+                {{studentRef.department}}
+            </td>
+        </tr>
+        {{/each}}
+        {{/each}}
+        {{/each}}
+        {{/each}}
+</tbody>
+
+    </table>
+
+</body>
+
+</html>

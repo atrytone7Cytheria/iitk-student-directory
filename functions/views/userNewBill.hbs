@@ -1,0 +1,33 @@
+
+<!--TODO print accumulated penalty -->
+<script>
+    var testvar = "abcdedfgh";
+</script>
+<style>
+    .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    }
+
+</style>
+
+    <table border="1" style="width:100%">
+        <title>Pending bills</title>
+        <tr>
+            <th>Description</th>
+
+            <th>Amount</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td> <input id="{{userId}}_trans_desc" style="width:max-content" type="text"
+    maxlength="40" size="45" value="" class="center">  </td>
+            <td><input id="{{userId}}_trans_amount" style="width:max-content" type="number"
+    maxlength="6" size="8" value="" class="center"></td>
+            <td> <a id="addbill" title="Click to add bill" href="#" onclick="javascript:window.demo.addAUserBill('{{userId}}');return false;">Add Bill</a> </td>
+        </tr>
+    </table>
+        <br> <br>

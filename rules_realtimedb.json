@@ -1,0 +1,22 @@
+{
+    "rules": {
+        ".read": "(auth.uid === 'OcKrYAhROgU7vcWsgbqsgna0uiN2REMOVE') || 
+              (auth.uid === 'ZIUJv3Vim7Ptctz1oU6LHmpeZMy2')",
+    ".write": "(auth.uid === 'OcKrYAhROgU7vcWsgbqsgna0uiN2REMOVE') ||
+               (auth.uid === 'ZIUJv3Vim7Ptctz1oU6LHmpeZMy2')",
+      "Deploy_14Feb21": {
+            "Customers": {
+                "$uid": {
+                    ".read": "(auth.uid === 'OcKrYAhROgU7vcWsgbqsgna0uiN2REMOVE') || 
+                   (auth.uid === 'ZIUJv3Vim7Ptctz1oU6LHmpeZMy2') || 
+                  ($uid === auth.uid)",
+        ".write": "((auth.uid === 'OcKrYAhROgU7vcWsgbqsgna0uiN2REMOVE') || 
+                    (auth.uid === 'ZIUJv3Vim7Ptctz1oU6LHmpeZMy2')) ||
+                   (($uid === auth.uid) && 
+                    root.child('customers').child($uid).child('access').val() != 'readonly'
+                   )"
+                }
+            }
+        }
+    }
+}

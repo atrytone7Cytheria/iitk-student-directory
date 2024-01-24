@@ -1,0 +1,47 @@
+
+<!--TODO print accumulated penalty -->
+<script>
+    var testvar = "abcdedfgh";
+</script>
+
+    <table border="1" style="width:100%">
+        <title>Pending bills</title>
+        <tr>
+            <th>No.</th>
+            <th>Ref#</th>
+            <th>Description</th>
+            <th>Due Date</th>
+
+            <th>Amount</th>
+            <th>Notes</th>
+            <th>Coll.Amt</th>
+{{#isTrue isPendingBills }}
+            <th>Received?</th>
+{{else}}
+            <th>AccTransaction#</th>
+{{/isTrue}}
+        </tr>
+
+        {{#each pendingBills as |transaction transactionId|}}
+        <!--{{stringyfy this}} -->
+        <tr>
+            <td>{{serialNo}}</td>
+            <td>{{transactionId}}</td>
+            <td>{{transaction.description}}</td>
+            <td>{{transaction.dueDate}}</td>
+            <td>{{vhabsolute transaction.transactionAmount}}</td>
+{{#isTrue ../isPendingBills }}
+            <td> <input id="{{transactionId}}_notes" style="width:max-content" type="text"
+    maxlength="40" size="8" value="">  </td>
+            <td><input id="{{transactionId}}_collected" style="width:max-content" type="text"
+    maxlength="6" size="8" value="{{vhabsolute transaction.transactionAmount}}"></td>
+            <td> <a id="collectbill" title="Click to mark as paid" href="#" onclick="javascript:window.demo.markBillAsPaidNew('{{../userId}}', '{{transactionId}}');return false;">Mark Paid</a> </td>
+{{else}}
+            <td>{{transaction.notes}}</td>
+            <td>{{transaction.collectedAmount}}</td>
+            <td>{{transaction.collectionTransactionUid}}</td>
+{{/isTrue}}
+        </tr>
+        {{/each}}
+    </table>
+        <br> <br>

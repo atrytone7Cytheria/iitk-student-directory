@@ -1,0 +1,178 @@
+<style>
+.mytiles {
+  display: inline-block;
+  width: 50%;
+  border:#621c1c
+}
+body {
+  background: linear-gradient(35deg, red, purple);
+}
+
+/* <select> styles */
+select {
+  /* Reset */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20em;
+  height: 3em;
+  padding: 0 4em 0 1em;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, rgba(255, 255, 255, 0.3) 3em, rgba(255, 255, 255, 0.2) 3em);
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* <option> colors */
+  /* Remove focus outline */
+  /* Remove IE arrow */
+}
+select option {
+  color: inherit;
+  background-color: #320a28;
+}
+select:focus {
+  outline: none;
+}
+select::-ms-expand {
+  display: none;
+}
+
+.searchdropdown 
+{
+  border: 1px solid #777;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 0 5px 5px;
+  background-color:#ebebeb;
+  margin: 3%;
+}
+
+.searchdropdown label
+{
+  font-size:10px;
+  text-transform: uppercase;
+  color: #a927ae;
+  font-weight: bolder;
+  padding: 2px 8px 0;
+}
+
+select
+{
+  background-color: #282222;
+  border:0px;
+}
+
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(5, 3, 31), 105, 255);
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+</style>
+<div class="searchdropdown">
+  <label>Year :</label>
+  <select id="year" name="year">
+  <option value=""></option>    
+  <option value="y23">Y23</option>
+  <option value="y22">y22</option>
+  <option value="y21">y21</option>
+  <option value="y20">y20</option>
+</select>
+</div>
+
+<div class="searchdropdown">
+  <label>Gender:</label>
+  <select id="gender" name="gender">
+  <option value=""></option>
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+</select>
+</div>
+
+<div class="searchdropdown">
+  <label>Dept:</label>
+  <select id="dept" name="dept">
+  <option value=""></option>
+  <option value="eee">EEE</option>
+  <option value="csc">CSC</option>
+  <option value="ae">AE</option>
+  <option value="chem">Chemical</option>
+  <option value="civil">Civil</option>
+</select>
+</div>
+
+<div class="searchdropdown">
+  <label>BGroup:</label>
+  <select id="bgroup" name="bgroup">
+  <option value=""></option>
+  <option value="apositive">A+</option>
+  <option value="anegative">A-</option>
+  <option value="bnegative">B-</option>
+  <option value="bpositive">B+</option>
+  <option value="opositive">O+</option>
+  <option value="onegative">O-</option>
+</select>
+</div>
+
+
+<div class="searchdropdown">
+  <label>Hall:</label>
+  <select id="hall" name="hall">
+  <option value=""></option>
+  <option value="Hall-1">Hall-1</option>
+  <option value="Hall-2">Hall-2</option>
+  <option value="Hall-3">Hall-3</option>
+  <option value="Hall-4">Hall-4</option>
+</select>
+</div>
+
+<div class="searchdropdown">
+  <label>Wing:</label>
+  <select id="wing" name="wing">
+  <option value=""></option>    
+  <option value="Wing-1">Wing-1</option>
+  <option value="Wing-2">Wing-2</option>
+  <option value="Wing-3">Wing-3</option>
+  <option value="Wing-4">Wing-4</option>
+</select>
+</div>
+
+<div class="searchdropdown">
+  <label>Prog:</label>
+  <select id="prog" name="prog">
+  <option value=""></option>    
+  <option value="BTech">BTech</option>
+  <option value="MTech">MTech</option>
+  <option value="MBA">MBA</option>
+  <option value="PhD">PhD</option>
+  <option value="MSc">MSc</option>
+</select>
+</div>
+<br>
+<div style="width: 100%;">
+<div style="text-align:center; box-shadow: 0 0 5px -1px rgba(0,0,0,0.2); margin-left:20%; width: 17%; height:36px; background-color: rgb(230, 116, 224); float:none; font-size:x-large; display:inline-block; border:1px solid #CCC;">
+    <a style="float:center;"  href="Search"
+                    onclick="javascript:window.demo.loadSubContent('1121', 'searchStudents');return false;">Search</a>
+    <div style="clear:both;"></div>
+<!--        <a href="StudentList"
+                    onclick="javascript:window.demo.loadContent('studentlist');return false;">
+                    All Students
+                </a>
+                -->
