@@ -10,6 +10,7 @@ It uses firebase realtime database for backend and web hosting.
 
 Demo is hosted at:
   https://varsha-iitk-eee.web.app/myhome?load=studentlist
+  https://varsha-iitk-eee.web.app/myhome?load=search
   Test phone number for login: 8612345678
   Test OTP: 951234
 (Can also use a working phone number, google will send otp to phone number)
