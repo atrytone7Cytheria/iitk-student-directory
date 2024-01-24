@@ -78,6 +78,9 @@
             <th>Name</th>
             <th>Phone#</th>
             <th>Department</th>
+            <th>Bood group</th>
+            <th>gender</th>
+            <th>Year</th>
             {{#isTrue printOption }}
             {{else}}
             {{/isTrue}}
@@ -110,7 +113,16 @@
                 {{studentRef.phone}}
             </td>
             <td>
-                {{studentRef.department}}
+                {{studentRef.dept}}
+            </td>
+            <td>
+                {{studentRef.bgroup}}
+            </td>
+            <td>
+                {{studentRef.gender}}
+            </td>
+            <td>
+                {{studentRef.year}}
             </td>
         </tr>
         {{/each}}

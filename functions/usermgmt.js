@@ -347,6 +347,7 @@ function makeStudentList(searchType, snap, year, gender, hall, wing, roomNo, rol
             console.log('------>Processing student: '+ studentId+', student data: '+JSON.stringify(studentSnapShot.val()));
             var matched = true;
 
+
             if (year) {
               if (year != studentRec.year)
                   matched = false;
@@ -356,12 +357,10 @@ function makeStudentList(searchType, snap, year, gender, hall, wing, roomNo, rol
                   matched = false;
             }
             if (hall) {
-              // if (hall != studentRec.hall)
               if (hall != hallName)
                   matched = false;
             }
             if (wing) {
-              // if (wing != studentRec.wing)
               if (wing != wingName)
                   matched = false;
             }
@@ -377,6 +376,7 @@ function makeStudentList(searchType, snap, year, gender, hall, wing, roomNo, rol
               if (dept != studentRec.dept)
                   matched = false;
             }
+            console.log('%%%%%%%%%%%%%%%%%% bgrop='+bgroup+', stu group:'+studentRec.bgroup);
             if (bgroup) {
               if (bgroup != studentRec.bgroup)
                   matched = false;
@@ -387,27 +387,6 @@ function makeStudentList(searchType, snap, year, gender, hall, wing, roomNo, rol
             }
             if (matched) {
 
-              // searchData[hallName][wingName][roomName] = Object.assign(searchData[hallName][wingName][roomName], stuObj);
-
-              // var stuObj = {}; 
-              // stuObj[studentId] = studentRec;
-              // var roomObj= {}; 
-              // roomObj[roomName] = Object.assign(searchData[hallName][wingName][roomName], stuObj);
-              // var wingObj = {};
-              // wingObj[wingName] = Object.assign(searchData[hallName][wingName], roomObj);
-              // var hallObj = {};
-              // hallObj[hallName] = Object.assign(searchData[hallName], wingObj);
-
-              // searchData = Object.assign(searchData, hallObj);
-              //                   //  {[hallName]: 
-              //                   //           {wingName: 
-              //                   //             {roomName: 
-              //                   //               { studentId:
-              //                   //                 studentRec
-              //                   //               }
-              //                   //             }
-              //                   //           }
-              //                   //         });
               var hallExists = false;
               for (const h in searchData) {
                 var thisHall = searchData[h];
@@ -468,17 +447,4 @@ console.log("************** OK matched: searchData: "+JSON.stringify(searchData)
     });
   }
   return searchData;
-  // var halls = searchData;
-  // response.render('students', { halls, searchType }); 
 }
-
-// {"Hall-1":{"Wing-1":{"102":{"-NVyNdhU95OdyC7T6oK4":{"Year":"23","department":"MECH","name":"Deepika","phone":"+919876543210"}}}},
-// "Hall-2":{"Wing-1":{"101":{"-NVyNdhU95OdyC7T6oK4":{"Year":"23","department":"EEE","name":"Varsha","phone":"+919876543211"}}}}}
-
-// {"Hall-1":{"102":{"-NVyNdhU95OdyC7T6oK4":{"Year":"23","department":"MECH","name":"Deepika","phone":"+919876543210"}},
-// "Wing-1":{"101":{"-NVyNdhU95OdyC7T6oK4":{"Year":"23","department":"CSC","name":"Elakya","phone":"+919876543210"}}}},
-
-// "Hall-2":{"Wing-1":{"101":{"-NVyNdhU95OdyC7T6oK4":{"Year":"23","department":"EEE","name":"Varsha","phone":"+919876543211"}}}}}
-
-// {"Hall-1":{"Wing-1":{"101":{"-NVyNdhU95OdyC7T6oK4":{"Year":"23","department":"CSC","name":"Elakya","phone":"+919876543210"}},"102":{"-NVyNdhU95OdyC7T6oK4":{"Year":"23","department":"MECH","name":"Deepika","phone":"+919876543210"}}}},"Hall-2":{"Wing-1":{"101":{"-NVyNdhU95OdyC7T6oK4":{"Year":"23","department":"EEE","name":"Varsha","phone":"+919876543211"}}}}}
-
